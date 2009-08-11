@@ -33,6 +33,7 @@
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtDBID = new System.Windows.Forms.TextBox();
             this.lblDBID = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUrl
@@ -138,11 +139,22 @@
             this.lblDBID.TabIndex = 10;
             this.lblDBID.Text = "DB ID";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(547, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Run Query";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DoPerformQuery);
+            // 
             // SampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 593);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDBID);
             this.Controls.Add(this.lblDBID);
             this.Controls.Add(this.txtOutput);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.TextBox txtDBID;
         private System.Windows.Forms.Label lblDBID;
+        private System.Windows.Forms.Button button1;
     }
 }
