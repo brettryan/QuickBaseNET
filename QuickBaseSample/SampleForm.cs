@@ -38,6 +38,9 @@ namespace JohnSands.QuickBase.Sample {
                 txtUserName.Text, txtPassword.Text, txtUrl.Text);
             try {
                 svc.GetSchema(txtDBID.Text);
+            } catch (QuickBaseException qbe) {
+                Console.WriteLine("Quickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
+                    qbe.ErrorCode, qbe.ErrorText, qbe.Action, qbe.Message);
             } catch (Exception ex) {
             }
         }
