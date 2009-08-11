@@ -41,14 +41,14 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUrl.Location = new System.Drawing.Point(78, 12);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(324, 20);
+            this.txtUrl.Size = new System.Drawing.Size(667, 20);
             this.txtUrl.TabIndex = 0;
             this.txtUrl.Text = "https://amgreetings.quickbase.com/db/";
             // 
             // btnGetSchemas
             // 
             this.btnGetSchemas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetSchemas.Location = new System.Drawing.Point(285, 116);
+            this.btnGetSchemas.Location = new System.Drawing.Point(628, 116);
             this.btnGetSchemas.Name = "btnGetSchemas";
             this.btnGetSchemas.Size = new System.Drawing.Size(117, 23);
             this.btnGetSchemas.TabIndex = 1;
@@ -89,7 +89,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.Location = new System.Drawing.Point(78, 38);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(324, 20);
+            this.txtUserName.Size = new System.Drawing.Size(667, 20);
             this.txtUserName.TabIndex = 5;
             this.txtUserName.Text = "brett.ryan@johnsands.com.au";
             // 
@@ -100,7 +100,7 @@
             this.txtPassword.Location = new System.Drawing.Point(78, 64);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(324, 20);
+            this.txtPassword.Size = new System.Drawing.Size(667, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "Moropima01";
             // 
@@ -109,10 +109,13 @@
             this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOutput.BackColor = System.Drawing.Color.MidnightBlue;
+            this.txtOutput.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutput.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtOutput.Location = new System.Drawing.Point(15, 145);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(387, 219);
+            this.txtOutput.Size = new System.Drawing.Size(730, 436);
             this.txtOutput.TabIndex = 9;
             this.txtOutput.Text = "";
             // 
@@ -122,7 +125,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDBID.Location = new System.Drawing.Point(78, 90);
             this.txtDBID.Name = "txtDBID";
-            this.txtDBID.Size = new System.Drawing.Size(324, 20);
+            this.txtDBID.Size = new System.Drawing.Size(667, 20);
             this.txtDBID.TabIndex = 11;
             this.txtDBID.Text = "begy9tmr3";
             // 
@@ -139,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 376);
+            this.ClientSize = new System.Drawing.Size(757, 593);
             this.Controls.Add(this.txtDBID);
             this.Controls.Add(this.lblDBID);
             this.Controls.Add(this.txtOutput);
