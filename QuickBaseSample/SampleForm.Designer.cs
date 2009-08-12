@@ -34,6 +34,8 @@
             this.txtDBID = new System.Windows.Forms.TextBox();
             this.lblDBID = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblQueryNum = new System.Windows.Forms.Label();
+            this.txtQueryNum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtUrl
@@ -149,11 +151,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.DoPerformQuery);
             // 
+            // lblQueryNum
+            // 
+            this.lblQueryNum.AutoSize = true;
+            this.lblQueryNum.Location = new System.Drawing.Point(13, 119);
+            this.lblQueryNum.Name = "lblQueryNum";
+            this.lblQueryNum.Size = new System.Drawing.Size(45, 13);
+            this.lblQueryNum.TabIndex = 13;
+            this.lblQueryNum.Text = "Query #";
+            // 
+            // txtQueryNum
+            // 
+            this.txtQueryNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueryNum.Location = new System.Drawing.Point(78, 116);
+            this.txtQueryNum.Name = "txtQueryNum";
+            this.txtQueryNum.Size = new System.Drawing.Size(463, 20);
+            this.txtQueryNum.TabIndex = 14;
+            this.txtQueryNum.Text = "6";
+            // 
             // SampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 593);
+            this.Controls.Add(this.txtQueryNum);
+            this.Controls.Add(this.lblQueryNum);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDBID);
             this.Controls.Add(this.lblDBID);
@@ -185,5 +208,7 @@
         private System.Windows.Forms.TextBox txtDBID;
         private System.Windows.Forms.Label lblDBID;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblQueryNum;
+        private System.Windows.Forms.TextBox txtQueryNum;
     }
 }

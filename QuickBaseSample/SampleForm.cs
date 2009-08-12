@@ -50,8 +50,19 @@ namespace JohnSands.QuickBase.Sample {
         private void DoPerformQuery(object sender, EventArgs args) {
             QuickBaseService client = new QuickBaseService(
                 txtUserName.Text, txtPassword.Text, txtUrl.Text);
-            QueryResult res = client.Query("begy9tmr3", 29);
+
+            int qry;
+            if (!Int32.TryParse(txtQueryNum.Text, out qry)) {
+                MessageBox.Show(this, "You must enter a query number",
+                    "Invalid Query", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtOutput.Clear();
+
+            QueryResult res = client.Query(txtDBID.Text, qry);
             StringBuilder sb;
+
             foreach (QueryRow r in res.Rows) {
                 sb = new StringBuilder();
                 foreach (string key in r.Data.Keys) {
@@ -60,6 +71,16 @@ namespace JohnSands.QuickBase.Sample {
                     sb.Append(key).Append("='").Append(r.Data[key]).Append('\'');
                 }
                 Log(sb.ToString());
+                // Start- test query.
+                //var q = from n in r.Data
+                //        where n.Key == "6"
+                //           && n.Value.StartsWith("D44")
+                //           && n.Value.Contains("7")
+                //        select n.Value;
+                //foreach (var b in q) {
+                //    Log(b);
+                //}
+                // END- test query.
             }
             Log(res.Rows.Count + " rows retrieved!");
         }
