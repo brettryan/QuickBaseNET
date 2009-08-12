@@ -72,47 +72,47 @@ namespace JohnSands.QuickBase.Sample {
 
                 Schema schema = svc.GetSchema(txtDBID.Text);
                 Log("Got Schema:       " + schema.Name);
-                Log("\n- ID:             " + schema.ID);
-                Log("\n- Created:        " + schema.CreateDate);
-                Log("\n- Description:    " + schema.Description);
-                Log("\n- Mod Date:       " + schema.ModDate);
-                Log("\n- Next Field ID:  " + schema.NextFieldID);
-                Log("\n- Next Query ID:  " + schema.NextQueryID);
-                Log("\n- Next Record ID: " + schema.NextRecordID);
-                Log("\n- Parent ID:      " + schema.ParentID);
-                Log("\n- Sort Field:     " + schema.SortField);
-                Log("\n- Sort Order:     " + schema.SortOrder);
+                Log("- ID:             " + schema.ID);
+                Log("- Created:        " + schema.CreateDate);
+                Log("- Description:    " + schema.Description);
+                Log("- Mod Date:       " + schema.ModDate);
+                Log("- Next Field ID:  " + schema.NextFieldID);
+                Log("- Next Query ID:  " + schema.NextQueryID);
+                Log("- Next Record ID: " + schema.NextRecordID);
+                Log("- Parent ID:      " + schema.ParentID);
+                Log("- Sort Field:     " + schema.SortField);
+                Log("- Sort Order:     " + schema.SortOrder);
                 if (schema.Variables.Count > 0) {
-                    Log("\n\n==== Variables ====");
+                    Log("\n==== Variables ====");
                     foreach (string key in schema.Variables.Keys) {
-                        Log("\n" + key + " = " + schema.Variables[key]);
+                        Log(key + " = " + schema.Variables[key]);
                     }
                 }
                 if (schema.Fields.Count > 0) {
-                    Log("\n\n==== Fields ====");
+                    Log("\n==== Fields ====");
                     foreach (int key in schema.Fields.Keys) {
                         Field fld = schema.Fields[key];
-                        Log("\n" + key + ": " + fld.ID);
+                        Log(key + ": " + fld.ID);
                     }
                 }
                 if (schema.Queries.Count > 0) {
-                    txtOutput.AppendText("\n\n==== Queries ====");
+                    txtOutput.AppendText("\n==== Queries ====");
                     foreach (Query qry in schema.Queries.Values) {
-                        Log("\nID={0}, Name={1}", qry.ID, qry.Name);
+                        Log("ID={0}, Name={1}", qry.ID, qry.Name);
                     }
                 }
                 if (schema.Children.Count > 0) {
-                    txtOutput.AppendText("\n\n==== Children ====");
+                    txtOutput.AppendText("\n==== Children ====");
                     foreach (string key in schema.Children.Keys) {
-                        Log("\n" + key + " = " + schema.Children[key]);
+                        Log(key + " = " + schema.Children[key]);
                     }
                 }
             } catch (QuickBaseException qbe) {
                 Log(
-                    "\nQuickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
+                    "Quickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
                     qbe.ErrorCode, qbe.ErrorText, qbe.Action, qbe.Message);
             } catch (Exception ex) {
-                Log("\nUnknown Error: {0}: \n{1}", ex.Message, ex.StackTrace);
+                Log("Unknown Error: {0}: \n{1}", ex.Message, ex.StackTrace);
             }
         }
 
