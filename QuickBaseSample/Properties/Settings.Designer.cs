@@ -22,5 +22,89 @@ namespace JohnSands.QuickBase.Sample.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://amgreetings.quickbase.com/db/")]
+        public string QuickBaseUrl {
+            get {
+                return ((string)(this["QuickBaseUrl"]));
+            }
+            set {
+                this["QuickBaseUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QuickBaseUser {
+            get {
+                return ((string)(this["QuickBaseUser"]));
+            }
+            set {
+                this["QuickBaseUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QuickBasePassword {
+            get {
+                return ((string)(this["QuickBasePassword"]));
+            }
+            set {
+                this["QuickBasePassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("begy9tmr3")]
+        public string QuickBaseDBID {
+            get {
+                return ((string)(this["QuickBaseDBID"]));
+            }
+            set {
+                this["QuickBaseDBID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public string QuickBaseQueryNumber {
+            get {
+                return ((string)(this["QuickBaseQueryNumber"]));
+            }
+            set {
+                this["QuickBaseQueryNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DebuggingLocation {
+            get {
+                return ((string)(this["DebuggingLocation"]));
+            }
+            set {
+                this["DebuggingLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DebuggingEnabled {
+            get {
+                return ((bool)(this["DebuggingEnabled"]));
+            }
+            set {
+                this["DebuggingEnabled"] = value;
+            }
+        }
     }
 }

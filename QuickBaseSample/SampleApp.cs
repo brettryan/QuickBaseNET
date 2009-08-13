@@ -24,7 +24,10 @@ namespace JohnSands.QuickBase.Sample {
         public static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
             Application.Run(new SampleForm());
+
+            Properties.Settings.Default.Save();
         }
 
     }

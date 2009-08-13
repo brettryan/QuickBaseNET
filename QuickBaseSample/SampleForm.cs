@@ -48,46 +48,63 @@ namespace JohnSands.QuickBase.Sample {
         }
 
         private void DoPerformQuery(object sender, EventArgs args) {
-            QuickBaseService client = new QuickBaseService(
-                txtUserName.Text, txtPassword.Text, txtUrl.Text);
-
-            int qry;
-            if (!Int32.TryParse(txtQueryNum.Text, out qry)) {
-                MessageBox.Show(this, "You must enter a query number",
-                    "Invalid Query", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            txtOutput.Clear();
-
-            QueryResult res = client.Query(txtDBID.Text, qry);
-            StringBuilder sb;
-
-            foreach (QueryRow r in res.Rows) {
-                sb = new StringBuilder();
-                foreach (string key in r.Data.Keys) {
-                    if (sb.Length > 0)
-                        sb.Append(',');
-                    sb.Append(key).Append("='").Append(r.Data[key]).Append('\'');
+            try {
+                QuickBaseService client = new QuickBaseService(
+                    txtUserName.Text, txtPassword.Text, txtUrl.Text);
+                if (chkWriteDebug.Checked) {
+                    client.DebugLocation = txtDebugLocation.Text;
+                    client.IsDebugEnabled = true;
                 }
-                Log(sb.ToString());
-                // Start- test query.
-                //var q = from n in r.Data
-                //        where n.Key == "6"
-                //           && n.Value.StartsWith("D44")
-                //           && n.Value.Contains("7")
-                //        select n.Value;
-                //foreach (var b in q) {
-                //    Log(b);
-                //}
-                // END- test query.
+
+                int qry = 0;
+                if (!String.IsNullOrEmpty(txtQueryNum.Text) && !Int32.TryParse(txtQueryNum.Text, out qry)) {
+                    MessageBox.Show(this, "You must enter a query number",
+                        "Invalid Query", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                txtOutput.Clear();
+
+                QueryResult res;
+                if (qry > 0)
+                    res = client.Query(txtDBID.Text, qry);
+                else
+                    res = client.Query(txtDBID.Text);
+
+                StringBuilder sb;
+
+                foreach (QueryRow r in res.Rows) {
+                    sb = new StringBuilder();
+                    foreach (int key in r.Data.Keys) {
+                        if (sb.Length > 0)
+                            sb.Append(',');
+                        sb.Append(key).Append("='").Append(r.Data[key]).Append('\'');
+                    }
+                    Log(sb.ToString());
+                    // Start- test query.
+                    //var q = from n in r.Data
+                    //        where n.Key == "6"
+                    //           && n.Value.StartsWith("D44")
+                    //           && n.Value.Contains("7")
+                    //        select n.Value;
+                    //foreach (var b in q) {
+                    //    Log(b);
+                    //}
+                    // END- test query.
+                }
+                Log(res.Rows.Count + " rows retrieved!");
+            } catch (Exception ex) {
+                HandleException(ex);
             }
-            Log(res.Rows.Count + " rows retrieved!");
         }
 
         private void DoGetSchemas(object sender, EventArgs e) {
             QuickBaseService svc = new QuickBaseService(
                 txtUserName.Text, txtPassword.Text, txtUrl.Text);
+            if (chkWriteDebug.Checked) {
+                svc.DebugLocation = txtDebugLocation.Text;
+                svc.IsDebugEnabled = true;
+            }
             try {
                 txtOutput.Clear();
 
@@ -117,23 +134,39 @@ namespace JohnSands.QuickBase.Sample {
                     }
                 }
                 if (schema.Queries.Count > 0) {
-                    txtOutput.AppendText("\n==== Queries ====");
+                    Log("\n==== Queries ====");
                     foreach (Query qry in schema.Queries.Values) {
                         Log("ID={0}, Name={1}", qry.ID, qry.Name);
                     }
                 }
                 if (schema.Children.Count > 0) {
-                    txtOutput.AppendText("\n==== Children ====");
+                    Log("\n==== Children ====");
                     foreach (string key in schema.Children.Keys) {
                         Log(key + " = " + schema.Children[key]);
                     }
                 }
-            } catch (QuickBaseException qbe) {
-                Log(
-                    "Quickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
-                    qbe.ErrorCode, qbe.ErrorText, qbe.Action, qbe.Message);
             } catch (Exception ex) {
+                HandleException(ex);
+            }
+        }
+
+        private void HandleException(Exception ex) {
+            QuickBaseException qbe = ex as QuickBaseException;
+            if (qbe == null) {
                 Log("Unknown Error: {0}: \n{1}", ex.Message, ex.StackTrace);
+            } else {
+                Log("Quickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
+                    qbe.ErrorCode, qbe.ErrorText, qbe.Action, qbe.Message);
+            }
+        }
+
+        private void DoLocationClicked(object sender, EventArgs e) {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            dlg.Description = "Select log file directory.";
+            dlg.ShowNewFolderButton = true;
+            if (dlg.ShowDialog(this) == DialogResult.OK) {
+                txtDebugLocation.Text = dlg.SelectedPath;
+                chkWriteDebug.Checked = true;
             }
         }
 
