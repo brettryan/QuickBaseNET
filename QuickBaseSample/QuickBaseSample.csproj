@@ -81,6 +81,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Commons.NET\Commons.Collections\Commons.Collections.csproj">
+      <Project>{86E680E4-7C41-45E2-A83A-AA9211FA5188}</Project>
+      <Name>Commons.Collections</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JohnSands.QuickBase\JohnSands.QuickBase.csproj">
       <Project>{7FF888DE-A3BB-4887-A239-40FAFAF9885D}</Project>
       <Name>JohnSands.QuickBase</Name>
