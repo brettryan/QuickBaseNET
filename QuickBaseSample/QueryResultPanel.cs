@@ -16,6 +16,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using Commons.System;
+
 
 namespace JohnSands.QuickBase.Sample {
 
@@ -23,6 +25,8 @@ namespace JohnSands.QuickBase.Sample {
 
         private const string StatusText = "Returned Rows: {0}";
         private QueryResult result;
+
+        public event EventHandler<EventArgs<QuickBaseFile>> FileLinkSelected;
 
         public QueryResultPanel() {
             InitializeComponent();
@@ -71,7 +75,12 @@ namespace JohnSands.QuickBase.Sample {
                                 cell = new DataGridViewLinkCell();
                                 QuickBaseFile f = rr.GetFile(fid);
                                 if (f != null) {
-                                    cell.Value = f.Uri;
+                                    cell.Tag = f;
+                                    cell.ToolTipText = f.Uri.ToString();
+                                    if (String.IsNullOrEmpty(f.DisplayText))
+                                        cell.Value = f.Uri;
+                                    else
+                                        cell.Value = f.DisplayText;
                                 }
                                 break;
                             case FieldType.Url:
@@ -87,6 +96,7 @@ namespace JohnSands.QuickBase.Sample {
                                     cell.Value = v.ToString();
                                 break;
                         }
+                        cell.Tag = rr.GetObject(fid);
                         r.Cells.Add(cell);
                     }
                     grdResults.Rows.Add(r);
@@ -96,6 +106,14 @@ namespace JohnSands.QuickBase.Sample {
                     if (col.Width > 400)
                         col.Width = 400;
                 }
+            }
+        }
+
+        private void DoCellContentClick(object sender, DataGridViewCellEventArgs e) {
+            QuickBaseFile file = grdResults[e.ColumnIndex, e.RowIndex].Tag
+                as QuickBaseFile;
+            if (file != null && FileLinkSelected != null) {
+                FileLinkSelected(this, new EventArgs<QuickBaseFile>(file));
             }
         }
 

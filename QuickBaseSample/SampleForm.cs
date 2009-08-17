@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -273,6 +274,26 @@ namespace JohnSands.QuickBase.Sample {
 
         private void DoFormLoaded(object sender, EventArgs e) {
             this.Size = Properties.Settings.Default.SampleFormSize;
+            queryResults.FileLinkSelected += new EventHandler<EventArgs<QuickBaseFile>>(queryResults_FileLinkSelected);
+        }
+
+        void queryResults_FileLinkSelected(object sender, EventArgs<QuickBaseFile> e) {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Title = "Save file to location.";
+            dlg.AutoUpgradeEnabled = true;
+            dlg.CheckPathExists = true;
+
+            DirectoryInfo di = new DirectoryInfo(txtDebugLocation.Text);
+            if (di.Exists)
+                dlg.InitialDirectory = txtDebugLocation.Text;
+            dlg.FileName = e.Data.DisplayText;
+
+            if (dlg.ShowDialog(this) == DialogResult.OK) {
+                using (Stream s = dlg.OpenFile()) {
+                    svc.WriteFile(e.Data, s);
+                    s.Close();
+                }
+            }
         }
 
         private void DoFormClosing(object sender, FormClosingEventArgs e) {
