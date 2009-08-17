@@ -23,5 +23,11 @@
     <Setting Name="DebuggingEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="SampleFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">750, 600</Value>
+    </Setting>
+    <Setting Name="SampleFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">150, 150</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QueryResultPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryResultPanel.Designer.cs">
+      <DependentUpon>QueryResultPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -55,8 +61,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="QueryResultPanel.resx">
+      <DependentUpon>QueryResultPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchemaInfoPanel.resx">
+      <DependentUpon>SchemaInfoPanel.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,11 +91,25 @@
     <Compile Include="SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SchemaInfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SchemaInfoPanel.Designer.cs">
+      <DependentUpon>SchemaInfoPanel.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Commons.NET\Commons.Collections\Commons.Collections.csproj">
       <Project>{86E680E4-7C41-45E2-A83A-AA9211FA5188}</Project>
       <Name>Commons.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons.NET\Commons.System\Commons.System.csproj">
+      <Project>{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}</Project>
+      <Name>Commons.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj">
+      <Project>{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}</Project>
+      <Name>Commons.Windows.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\JohnSands.QuickBase\JohnSands.QuickBase.csproj">
       <Project>{7FF888DE-A3BB-4887-A239-40FAFAF9885D}</Project>

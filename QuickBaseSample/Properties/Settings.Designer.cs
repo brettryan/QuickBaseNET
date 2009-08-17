@@ -106,5 +106,29 @@ namespace JohnSands.QuickBase.Sample.Properties {
                 this["DebuggingEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("750, 600")]
+        public global::System.Drawing.Size SampleFormSize {
+            get {
+                return ((global::System.Drawing.Size)(this["SampleFormSize"]));
+            }
+            set {
+                this["SampleFormSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150, 150")]
+        public global::System.Drawing.Point SampleFormLocation {
+            get {
+                return ((global::System.Drawing.Point)(this["SampleFormLocation"]));
+            }
+            set {
+                this["SampleFormLocation"] = value;
+            }
+        }
     }
 }

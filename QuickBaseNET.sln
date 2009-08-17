@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.System", "..\Common
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{09C0D1BA-FEA4-482B-B840-4E913A922C3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Windows.Forms", "..\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj", "{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,12 +35,17 @@ Global
 		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
 		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
+		{86E680E4-7C41-45E2-A83A-AA9211FA5188} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
+		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
 	EndGlobalSection
 EndGlobal
