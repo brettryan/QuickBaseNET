@@ -203,43 +203,6 @@ namespace JohnSands.QuickBase.Sample {
                 //    res = svc.Query(GetSelectedDBID());
                 queryResults.Result = res = svc.Query(GetSelectedDBID(), elm.Tag.ID);
 
-                //// TODO: Remove below sample and add support to the view for it.
-                //// ---- START SAMPLE ----
-                //if (!String.IsNullOrEmpty(txtDebugLocation.Text)) {
-                //    var q = from f in res.Schema.Fields.Values
-                //            where f.FieldType == FieldType.File
-                //            select f;
-                //    Field fld = q.FirstOrDefault();
-                //    if (fld != null) {
-                //        var qr = from r in res.Rows
-                //                 select r.GetFile(fld.ID);
-                //        var n = qr.Skip(6).FirstOrDefault();
-                //        if (n != null) {
-                //            using (System.IO.FileStream fs = new System.IO.FileStream(
-                //                    txtDebugLocation.Text + @"\" + n.DisplayText,
-                //                    System.IO.FileMode.Create)) {
-                //                svc.WriteFile(n, fs);
-                //                fs.Close();
-                //            }
-                //            // ---- Alternatively ----
-                //            //using (System.IO.Stream str = svc.GetFile(n)) {
-                //            //    byte[] buffer = new byte[4096];
-                //            //    int read;
-                //            //    using (System.IO.FileStream fs = new System.IO.FileStream(
-                //            //        txtDebugLocation.Text + @"\" + n.DisplayText,
-                //            //        System.IO.FileMode.Create)) {
-                //            //        while ((read = str.Read(buffer, 0, buffer.Length)) > 0) {
-                //            //            fs.Write(buffer, 0, read);
-                //            //        }
-                //            //        fs.Close();
-                //            //    }
-                //            //    str.Close();
-                //            //}
-                //        }
-                //    }
-                //}
-                //// ---- END SAMPLE ----
-
                 //PrintQueryResult(res);
                 if (res.Schema != null) {
                     Log("\nResult also has a schema object available...");
