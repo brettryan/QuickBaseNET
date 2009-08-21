@@ -99,15 +99,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons.NET\Commons.Collections\Commons.Collections.csproj">
+    <ProjectReference Include="..\..\Libraries\Commons.NET\Commons.Collections\Commons.Collections.csproj">
       <Project>{86E680E4-7C41-45E2-A83A-AA9211FA5188}</Project>
       <Name>Commons.Collections</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons.NET\Commons.System\Commons.System.csproj">
+    <ProjectReference Include="..\..\Libraries\Commons.NET\Commons.System\Commons.System.csproj">
       <Project>{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}</Project>
       <Name>Commons.System</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj">
+    <ProjectReference Include="..\..\Libraries\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj">
       <Project>{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}</Project>
       <Name>Commons.Windows.Forms</Name>
     </ProjectReference>

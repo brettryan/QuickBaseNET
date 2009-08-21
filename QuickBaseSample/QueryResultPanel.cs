@@ -26,6 +26,8 @@ namespace JohnSands.QuickBase.Sample {
         private const string StatusText = "Returned Rows: {0}";
         private QueryResult result;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event EventHandler<EventArgs<QuickBaseFile>> FileLinkSelected;
 
         public QueryResultPanel() {

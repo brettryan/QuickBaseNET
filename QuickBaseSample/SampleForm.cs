@@ -14,6 +14,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
@@ -31,6 +32,8 @@ namespace JohnSands.QuickBase.Sample {
     public partial class SampleForm : Form {
 
         private QuickBaseService svc;
+        private BackgroundWorker wkr;
+        private ToolStripButton cancelButton;
 
         /// <summary>
         /// Creates a new instance of <c>SampleForm</c>.
@@ -181,7 +184,7 @@ namespace JohnSands.QuickBase.Sample {
                     comboQuery.Items.Add(new GenericElement<Query>(q.Name, q));
                 }
             } catch (Exception ex) {
-                HandleException(ex);
+                HandleException(ex, true);
             }
         }
 
@@ -211,17 +214,63 @@ namespace JohnSands.QuickBase.Sample {
                     Log("No schema object returned.");
                 }
             } catch (Exception ex) {
-                HandleException(ex);
+                HandleException(ex, true);
             }
         }
 
         private void HandleException(Exception ex) {
             QuickBaseException qbe = ex as QuickBaseException;
             if (qbe == null) {
-                Log("Unknown Error: {0}: \n{1}", ex.Message, ex.StackTrace);
+                System.Net.WebException we = ex as System.Net.WebException;
+                if (we == null) {
+                    Log("Unknown Error: {0}: \n{1}", ex.Message, ex.StackTrace);
+                } else {
+                    Log("Web Error ({0}): {1}\n{2}", we.Status, we.Message, we.StackTrace);
+                }
             } else {
                 Log("Quickbase Error: {0}: {1}\n  Action: {2}\n  Error: {3}",
                     qbe.ErrorCode, qbe.ErrorText, qbe.Action, qbe.Message);
+            }
+        }
+
+        private void HandleException(Exception ex, bool showDialog) {
+            HandleException(ex);
+            if (showDialog) {
+
+                QuickBaseException qbe = ex as QuickBaseException;
+                if (qbe != null) {
+                    MessageBox.Show(this,
+                        String.Format(
+                            "QuickBase rased an error while getting schema information.\n\n" +
+                            "Action: {0}\nError: {1} - {2}\nMessage: {3}",
+                            qbe.Action,
+                            qbe.ErrorCode,
+                            qbe.ErrorText,
+                            qbe.Message),
+                        "QuickBase Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+                WebException we = ex as WebException;
+                if (we != null) {
+                    MessageBox.Show(this,
+                        String.Format(
+                            "{0}: {1}",
+                            we.Status, we.Message),
+                        "Web Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+                MessageBox.Show(this,
+                    String.Format(
+                        "{0} rased.\n{1}",
+                        ex.Message,
+                        ex.StackTrace),
+                    "Unknown Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -237,10 +286,26 @@ namespace JohnSands.QuickBase.Sample {
 
         private void DoFormLoaded(object sender, EventArgs e) {
             this.Size = Properties.Settings.Default.SampleFormSize;
+            this.Location = Properties.Settings.Default.SampleFormLocation;
+            if (Properties.Settings.Default.SampleFormMaximized) {
+                this.WindowState = FormWindowState.Maximized;
+            }
             queryResults.FileLinkSelected += new EventHandler<EventArgs<QuickBaseFile>>(queryResults_FileLinkSelected);
+
+            cancelButton = new ToolStripButton("Cancel");
+            cancelButton.Visible = false;
+            cancelButton.Click += new EventHandler(DoCancel);
+            //statusStrip1.Items.Add(cancelButton);
+            statusStrip1.Items.Insert(1, cancelButton);
         }
 
-        void queryResults_FileLinkSelected(object sender, EventArgs<QuickBaseFile> e) {
+        private void DoCancel(object sender, EventArgs e) {
+            if (wkr != null && wkr.IsBusy && wkr.WorkerSupportsCancellation) {
+                wkr.CancelAsync();
+            }
+        }
+
+        private void queryResults_FileLinkSelected(object sender, EventArgs<QuickBaseFile> e) {
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Title = "Save file to location.";
             dlg.AutoUpgradeEnabled = true;
@@ -252,15 +317,62 @@ namespace JohnSands.QuickBase.Sample {
             dlg.FileName = e.Data.DisplayText;
 
             if (dlg.ShowDialog(this) == DialogResult.OK) {
-                using (Stream s = dlg.OpenFile()) {
-                    svc.WriteFile(e.Data, s);
-                    s.Close();
-                }
+                progressStatus.Value = 0;
+                progressStatus.Visible = true;
+                labelStatus.Text = String.Empty;
+                cancelButton.Visible = true;
+
+                BackgroundWorkerDialog bgdlg = new BackgroundWorkerDialog(
+                    String.Format("Downloading file '{0}'", e.Data.DisplayText),
+                    "Downloading file from QuickBase...");
+                wkr = svc.WriteFileAsync(e.Data, dlg.FileName,
+                    DoWriteFileStarted,
+                    DoWriteFileComplete,
+                    DoWriteFileProgressChanged);
+                bgdlg.SetWorker(wkr);
+                bgdlg.ShowDialog(this);
             }
         }
 
+        private void DoWriteFileStarted(QuickBaseFile file, long length, string contentType) {
+            labelStatus.Text = String.Format(
+                "File download started with length {0}, content type {1}", length, contentType);
+            //Console.WriteLine("Write File Started: {0}, {1}", length, contentType);
+        }
+        private void DoWriteFileComplete(QuickBaseFile file, bool cancelled, Exception ex) {
+            if (ex != null) {
+                MessageBox.Show(this,
+                    "There was a problem writing the output file!\n\n" + ex.Message,
+                    "File download error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                labelStatus.Text = String.Format(
+                    "Download of '{0}' raised error!", file.DisplayText);
+            } else if (cancelled) {
+                labelStatus.Text = String.Format(
+                    "Download of '{0}' cancelled!", file.DisplayText);
+            } else {
+                labelStatus.Text = String.Format(
+                    "Download of '{0}' completed successfully!", file.DisplayText);
+            }
+            progressStatus.Visible = false;
+            cancelButton.Visible = false;
+            wkr = null;
+        }
+        private void DoWriteFileProgressChanged(QuickBaseFile file, int percent) {
+            progressStatus.Value = percent;
+        }
+
         private void DoFormClosing(object sender, FormClosingEventArgs e) {
-            Properties.Settings.Default.SampleFormSize = this.Size;
+            if (WindowState == FormWindowState.Normal) {
+                Properties.Settings.Default.SampleFormSize = Size;
+                Properties.Settings.Default.SampleFormLocation = Location;
+            }
+            Properties.Settings.Default.SampleFormMaximized =
+                WindowState == FormWindowState.Maximized;
+            if (svc != null && svc.IsAuthenticated) {
+                try {
+                    svc.SignOut();
+                } catch (Exception) { }
+            }
         }
 
         private void UpdateEnabled() {
@@ -307,7 +419,7 @@ namespace JohnSands.QuickBase.Sample {
                 }
                 UpdateEnabled();
             } catch (Exception ex) {
-                HandleException(ex);
+                HandleException(ex, true);
             }
         }
 
@@ -324,7 +436,7 @@ namespace JohnSands.QuickBase.Sample {
                 svc.SignOut();
                 UpdateEnabled();
             } catch (Exception ex) {
-                HandleException(ex);
+                HandleException(ex, true);
             }
         }
 

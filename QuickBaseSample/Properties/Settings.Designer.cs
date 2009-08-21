@@ -130,5 +130,17 @@ namespace JohnSands.QuickBase.Sample.Properties {
                 this["SampleFormLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SampleFormMaximized {
+            get {
+                return ((bool)(this["SampleFormMaximized"]));
+            }
+            set {
+                this["SampleFormMaximized"] = value;
+            }
+        }
     }
 }

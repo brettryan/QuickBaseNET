@@ -29,5 +29,8 @@
     <Setting Name="SampleFormLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">150, 150</Value>
     </Setting>
+    <Setting Name="SampleFormMaximized" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
