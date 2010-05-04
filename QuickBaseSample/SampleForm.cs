@@ -380,6 +380,7 @@ namespace JohnSands.QuickBase.Sample {
             btnSignIn.Enabled = !authenticated;
             txtPassword.Enabled = !authenticated;
             txtUserName.Enabled = !authenticated;
+            textAppToken.Enabled = !authenticated;
 
             btnGetSchemas.Enabled = authenticated && !String.IsNullOrEmpty(GetSelectedDBID());
             btnRefreshSchemas.Enabled = authenticated;
@@ -401,8 +402,14 @@ namespace JohnSands.QuickBase.Sample {
                     MessageBoxIcon.Error);
             }
             try {
-                svc = new QuickBaseService(
-                   txtUserName.Text, txtPassword.Text, txtUrl.Text);
+                string appToken = textAppToken.Text.TrimToEmpty();
+                if (String.IsNullOrEmpty(appToken)) {
+                    svc = new QuickBaseService(
+                       txtUserName.Text, txtPassword.Text, txtUrl.Text);
+                } else {
+                    svc = new QuickBaseService(
+                       txtUserName.Text, txtPassword.Text, txtUrl.Text, appToken);
+                }
                 if (chkWriteDebug.Checked) {
                     svc.DebugLocation = txtDebugLocation.Text;
                     svc.IsDebugEnabled = true;
@@ -442,6 +449,7 @@ namespace JohnSands.QuickBase.Sample {
 
         private void DoRefreshSchemas(object sender, EventArgs e) {
             IDictionary<string, string> res = svc.GetGrantedDatabases();
+            comboBox1.Items.Clear();
             foreach (KeyValuePair<string, string> ent in res) {
                 GenericElement<string> elm = new GenericElement<string>(ent.Value, ent.Key);
                 comboBox1.Items.Add(elm);

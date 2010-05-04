@@ -50,6 +50,8 @@
             this.progressStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textAppToken = new System.Windows.Forms.TextBox();
             this.queryResults = new JohnSands.QuickBase.Sample.QueryResultPanel();
             this.schemaInfoPanel1 = new JohnSands.QuickBase.Sample.SchemaInfoPanel();
             this.tabControl1.SuspendLayout();
@@ -65,10 +67,10 @@
             // 
             this.btnGetSchemas.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnGetSchemas.Enabled = false;
-            this.btnGetSchemas.Location = new System.Drawing.Point(633, 118);
+            this.btnGetSchemas.Location = new System.Drawing.Point(633, 144);
             this.btnGetSchemas.Name = "btnGetSchemas";
             this.btnGetSchemas.Size = new System.Drawing.Size(75, 23);
-            this.btnGetSchemas.TabIndex = 1;
+            this.btnGetSchemas.TabIndex = 9;
             this.btnGetSchemas.Text = "Get Schema";
             this.btnGetSchemas.UseVisualStyleBackColor = true;
             this.btnGetSchemas.Click += new System.EventHandler(this.DoGetSchemas);
@@ -116,7 +118,7 @@
             this.txtOutput.Location = new System.Drawing.Point(6, 6);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(680, 347);
+            this.txtOutput.Size = new System.Drawing.Size(680, 321);
             this.txtOutput.TabIndex = 9;
             this.txtOutput.Text = "";
             this.txtOutput.WordWrap = false;
@@ -148,10 +150,10 @@
             this.txtDebugLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtDebugLocation, 2);
             this.txtDebugLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "DebuggingLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtDebugLocation.Location = new System.Drawing.Point(202, 92);
+            this.txtDebugLocation.Location = new System.Drawing.Point(202, 118);
             this.txtDebugLocation.Name = "txtDebugLocation";
             this.txtDebugLocation.Size = new System.Drawing.Size(425, 20);
-            this.txtDebugLocation.TabIndex = 16;
+            this.txtDebugLocation.TabIndex = 6;
             this.txtDebugLocation.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.DebuggingLocation;
             this.txtDebugLocation.Click += new System.EventHandler(this.DoLocationClicked);
             // 
@@ -162,7 +164,7 @@
             this.chkWriteDebug.Checked = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.DebuggingEnabled;
             this.tableLayoutPanel2.SetColumnSpan(this.chkWriteDebug, 2);
             this.chkWriteDebug.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "DebuggingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkWriteDebug.Location = new System.Drawing.Point(10, 93);
+            this.chkWriteDebug.Location = new System.Drawing.Point(10, 119);
             this.chkWriteDebug.Name = "chkWriteDebug";
             this.chkWriteDebug.Size = new System.Drawing.Size(186, 17);
             this.chkWriteDebug.TabIndex = 15;
@@ -178,7 +180,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(525, 20);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBasePassword;
             // 
             // txtUserName
@@ -189,7 +191,7 @@
             this.txtUserName.Location = new System.Drawing.Point(102, 35);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(525, 20);
-            this.txtUserName.TabIndex = 5;
+            this.txtUserName.TabIndex = 1;
             this.txtUserName.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBaseUser;
             // 
             // txtUrl
@@ -210,11 +212,11 @@
             this.tabControl1.Controls.Add(this.tabSchemas);
             this.tabControl1.Controls.Add(this.tabLog);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(8, 147);
+            this.tabControl1.Location = new System.Drawing.Point(8, 173);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(700, 364);
-            this.tabControl1.TabIndex = 17;
+            this.tabControl1.Size = new System.Drawing.Size(700, 338);
+            this.tabControl1.TabIndex = 10;
             // 
             // tabQueryResult
             // 
@@ -222,7 +224,7 @@
             this.tabQueryResult.Location = new System.Drawing.Point(4, 22);
             this.tabQueryResult.Name = "tabQueryResult";
             this.tabQueryResult.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQueryResult.Size = new System.Drawing.Size(692, 338);
+            this.tabQueryResult.Size = new System.Drawing.Size(692, 312);
             this.tabQueryResult.TabIndex = 1;
             this.tabQueryResult.Text = "Query Result";
             this.tabQueryResult.UseVisualStyleBackColor = true;
@@ -243,7 +245,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(686, 332);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(686, 306);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // comboQuery
@@ -255,7 +257,7 @@
             this.comboQuery.Location = new System.Drawing.Point(44, 4);
             this.comboQuery.Name = "comboQuery";
             this.comboQuery.Size = new System.Drawing.Size(195, 21);
-            this.comboQuery.TabIndex = 15;
+            this.comboQuery.TabIndex = 0;
             // 
             // tabSchemas
             // 
@@ -263,7 +265,7 @@
             this.tabSchemas.Location = new System.Drawing.Point(4, 22);
             this.tabSchemas.Name = "tabSchemas";
             this.tabSchemas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSchemas.Size = new System.Drawing.Size(692, 338);
+            this.tabSchemas.Size = new System.Drawing.Size(692, 312);
             this.tabSchemas.TabIndex = 2;
             this.tabSchemas.Text = "Schemas";
             this.tabSchemas.UseVisualStyleBackColor = true;
@@ -274,7 +276,7 @@
             this.tabLog.Location = new System.Drawing.Point(4, 22);
             this.tabLog.Name = "tabLog";
             this.tabLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLog.Size = new System.Drawing.Size(692, 338);
+            this.tabLog.Size = new System.Drawing.Size(692, 312);
             this.tabLog.TabIndex = 0;
             this.tabLog.Text = "Log";
             this.tabLog.UseVisualStyleBackColor = true;
@@ -283,10 +285,10 @@
             // 
             this.btnRefreshSchemas.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnRefreshSchemas.Enabled = false;
-            this.btnRefreshSchemas.Location = new System.Drawing.Point(552, 118);
+            this.btnRefreshSchemas.Location = new System.Drawing.Point(552, 144);
             this.btnRefreshSchemas.Name = "btnRefreshSchemas";
             this.btnRefreshSchemas.Size = new System.Drawing.Size(75, 23);
-            this.btnRefreshSchemas.TabIndex = 2;
+            this.btnRefreshSchemas.TabIndex = 8;
             this.btnRefreshSchemas.Text = "Refresh";
             this.btnRefreshSchemas.UseVisualStyleBackColor = true;
             this.btnRefreshSchemas.Click += new System.EventHandler(this.DoRefreshSchemas);
@@ -298,17 +300,17 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 119);
+            this.comboBox1.Location = new System.Drawing.Point(102, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(444, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.DoSelectedDbChanged);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 123);
+            this.label1.Location = new System.Drawing.Point(8, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
@@ -320,7 +322,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(633, 34);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(75, 23);
-            this.btnSignIn.TabIndex = 18;
+            this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.DoSignIn);
@@ -332,7 +334,7 @@
             this.btnSignOut.Location = new System.Drawing.Point(633, 63);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(75, 23);
-            this.btnSignOut.TabIndex = 19;
+            this.btnSignOut.TabIndex = 5;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.DoSignOut);
@@ -368,26 +370,29 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.btnSignOut, 4, 2);
-            this.tableLayoutPanel2.Controls.Add(this.tabControl1, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.btnRefreshSchemas, 3, 4);
-            this.tableLayoutPanel2.Controls.Add(this.btnGetSchemas, 4, 4);
+            this.tableLayoutPanel2.Controls.Add(this.tabControl1, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.btnRefreshSchemas, 3, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnGetSchemas, 4, 5);
             this.tableLayoutPanel2.Controls.Add(this.lblPassword, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.chkWriteDebug, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.chkWriteDebug, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.lblUserName, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtDebugLocation, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtDebugLocation, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtUrl, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtUserName, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtPassword, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblUrl, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSignIn, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textAppToken, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowCount = 7;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -395,7 +400,28 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(716, 514);
-            this.tableLayoutPanel2.TabIndex = 21;
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "App Token";
+            // 
+            // textAppToken
+            // 
+            this.textAppToken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.textAppToken, 3);
+            this.textAppToken.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "QuickBaseAppToken", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textAppToken.Location = new System.Drawing.Point(102, 92);
+            this.textAppToken.Name = "textAppToken";
+            this.textAppToken.Size = new System.Drawing.Size(525, 20);
+            this.textAppToken.TabIndex = 3;
+            this.textAppToken.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBaseAppToken;
             // 
             // queryResults
             // 
@@ -403,8 +429,8 @@
             this.queryResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.queryResults.Location = new System.Drawing.Point(3, 32);
             this.queryResults.Name = "queryResults";
-            this.queryResults.Size = new System.Drawing.Size(680, 297);
-            this.queryResults.TabIndex = 0;
+            this.queryResults.Size = new System.Drawing.Size(680, 271);
+            this.queryResults.TabIndex = 1;
             // 
             // schemaInfoPanel1
             // 
@@ -473,5 +499,7 @@
         private System.Windows.Forms.ToolStripStatusLabel labelStatus;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textAppToken;
     }
 }
