@@ -448,7 +448,8 @@ namespace JohnSands.QuickBase.Sample {
         }
 
         private void DoRefreshSchemas(object sender, EventArgs e) {
-            IDictionary<string, string> res = svc.GetGrantedDatabases();
+            IDictionary<string, string> res
+                = svc.GetGrantedDatabases(/*GrantedDBOPtions.Parents*/);
             comboBox1.Items.Clear();
             foreach (KeyValuePair<string, string> ent in res) {
                 GenericElement<string> elm = new GenericElement<string>(ent.Value, ent.Key);
