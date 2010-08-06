@@ -1,7 +1,7 @@
 ﻿/*
- * SampleForm.cs    8/11/2009 5:40:37 PM
+ * SampleForm.cs    11 August 2009, 17:40
  *
- * Copyright 2009  All rights reserved.
+ * Copyright 2009 Drunken Dev. All rights reserved.
  * Use is subject to license terms
  *
  * Author: Brett Ryan
@@ -21,10 +21,10 @@ using System.Windows.Forms;
 using Commons.Windows.Forms;
 using Commons.System;
 
-using JohnSands.QuickBase;
+using DrunkenDev.QuickBase;
 
 
-namespace JohnSands.QuickBase.Sample {
+namespace DrunkenDev.QuickBase.Sample {
 
     /// <summary>
     ///

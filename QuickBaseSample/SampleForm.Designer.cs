@@ -1,4 +1,4 @@
-﻿namespace JohnSands.QuickBase.Sample {
+﻿namespace DrunkenDev.QuickBase.Sample {
     partial class SampleForm {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabQueryResult = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.queryResults = new DrunkenDev.QuickBase.Sample.QueryResultPanel();
             this.comboQuery = new System.Windows.Forms.ComboBox();
             this.tabSchemas = new System.Windows.Forms.TabPage();
+            this.schemaInfoPanel1 = new DrunkenDev.QuickBase.Sample.SchemaInfoPanel();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.btnRefreshSchemas = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -52,8 +54,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.textAppToken = new System.Windows.Forms.TextBox();
-            this.queryResults = new JohnSands.QuickBase.Sample.QueryResultPanel();
-            this.schemaInfoPanel1 = new JohnSands.QuickBase.Sample.SchemaInfoPanel();
             this.tabControl1.SuspendLayout();
             this.tabQueryResult.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,21 +149,21 @@
             // 
             this.txtDebugLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtDebugLocation, 2);
-            this.txtDebugLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "DebuggingLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDebugLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "DebuggingLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtDebugLocation.Location = new System.Drawing.Point(202, 118);
             this.txtDebugLocation.Name = "txtDebugLocation";
             this.txtDebugLocation.Size = new System.Drawing.Size(425, 20);
             this.txtDebugLocation.TabIndex = 6;
-            this.txtDebugLocation.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.DebuggingLocation;
+            this.txtDebugLocation.Text = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.DebuggingLocation;
             this.txtDebugLocation.Click += new System.EventHandler(this.DoLocationClicked);
             // 
             // chkWriteDebug
             // 
             this.chkWriteDebug.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.chkWriteDebug.AutoSize = true;
-            this.chkWriteDebug.Checked = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.DebuggingEnabled;
+            this.chkWriteDebug.Checked = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.DebuggingEnabled;
             this.tableLayoutPanel2.SetColumnSpan(this.chkWriteDebug, 2);
-            this.chkWriteDebug.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "DebuggingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkWriteDebug.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "DebuggingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.chkWriteDebug.Location = new System.Drawing.Point(10, 119);
             this.chkWriteDebug.Name = "chkWriteDebug";
             this.chkWriteDebug.Size = new System.Drawing.Size(186, 17);
@@ -175,35 +175,35 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtPassword, 3);
-            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "QuickBasePassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "QuickBasePassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPassword.Location = new System.Drawing.Point(102, 64);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(525, 20);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBasePassword;
+            this.txtPassword.Text = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.QuickBasePassword;
             // 
             // txtUserName
             // 
             this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtUserName, 3);
-            this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "QuickBaseUser", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "QuickBaseUser", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtUserName.Location = new System.Drawing.Point(102, 35);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(525, 20);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBaseUser;
+            this.txtUserName.Text = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.QuickBaseUser;
             // 
             // txtUrl
             // 
             this.txtUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.txtUrl, 3);
-            this.txtUrl.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "QuickBaseUrl", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtUrl.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "QuickBaseUrl", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtUrl.Location = new System.Drawing.Point(102, 8);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(525, 20);
             this.txtUrl.TabIndex = 0;
-            this.txtUrl.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBaseUrl;
+            this.txtUrl.Text = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.QuickBaseUrl;
             // 
             // tabControl1
             // 
@@ -248,6 +248,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(686, 306);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
+            // queryResults
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.queryResults, 3);
+            this.queryResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.queryResults.Location = new System.Drawing.Point(3, 32);
+            this.queryResults.Name = "queryResults";
+            this.queryResults.Size = new System.Drawing.Size(680, 271);
+            this.queryResults.TabIndex = 1;
+            // 
             // comboQuery
             // 
             this.comboQuery.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -269,6 +278,15 @@
             this.tabSchemas.TabIndex = 2;
             this.tabSchemas.Text = "Schemas";
             this.tabSchemas.UseVisualStyleBackColor = true;
+            // 
+            // schemaInfoPanel1
+            // 
+            this.schemaInfoPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.schemaInfoPanel1.Location = new System.Drawing.Point(6, 6);
+            this.schemaInfoPanel1.Name = "schemaInfoPanel1";
+            this.schemaInfoPanel1.Size = new System.Drawing.Size(680, 187);
+            this.schemaInfoPanel1.TabIndex = 0;
             // 
             // tabLog
             // 
@@ -416,30 +434,12 @@
             // 
             this.textAppToken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textAppToken, 3);
-            this.textAppToken.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::JohnSands.QuickBase.Sample.Properties.Settings.Default, "QuickBaseAppToken", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textAppToken.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default, "QuickBaseAppToken", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textAppToken.Location = new System.Drawing.Point(102, 92);
             this.textAppToken.Name = "textAppToken";
             this.textAppToken.Size = new System.Drawing.Size(525, 20);
             this.textAppToken.TabIndex = 3;
-            this.textAppToken.Text = global::JohnSands.QuickBase.Sample.Properties.Settings.Default.QuickBaseAppToken;
-            // 
-            // queryResults
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.queryResults, 3);
-            this.queryResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.queryResults.Location = new System.Drawing.Point(3, 32);
-            this.queryResults.Name = "queryResults";
-            this.queryResults.Size = new System.Drawing.Size(680, 271);
-            this.queryResults.TabIndex = 1;
-            // 
-            // schemaInfoPanel1
-            // 
-            this.schemaInfoPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.schemaInfoPanel1.Location = new System.Drawing.Point(6, 6);
-            this.schemaInfoPanel1.Name = "schemaInfoPanel1";
-            this.schemaInfoPanel1.Size = new System.Drawing.Size(680, 187);
-            this.schemaInfoPanel1.TabIndex = 0;
+            this.textAppToken.Text = global::DrunkenDev.QuickBase.Sample.Properties.Settings.Default.QuickBaseAppToken;
             // 
             // SampleForm
             // 
@@ -450,7 +450,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Location = new System.Drawing.Point(150, 150);
             this.Name = "SampleForm";
-            this.Text = "SampleForm";
+            this.Text = "QuickBase API - Sample Application";
             this.Load += new System.EventHandler(this.DoFormLoaded);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DoFormClosing);
             this.tabControl1.ResumeLayout(false);

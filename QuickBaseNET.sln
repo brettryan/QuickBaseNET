@@ -1,51 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JohnSands.QuickBase", "JohnSands.QuickBase\JohnSands.QuickBase.csproj", "{7FF888DE-A3BB-4887-A239-40FAFAF9885D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBaseAPI", "QuickBaseAPI\QuickBaseAPI.csproj", "{7FF888DE-A3BB-4887-A239-40FAFAF9885D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBaseSample", "QuickBaseSample\QuickBaseSample.csproj", "{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{09C0D1BA-FEA4-482B-B840-4E913A922C3F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.System", "..\Commons.NET\Commons.System\Commons.System.csproj", "{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Collections", "..\Commons.NET\Commons.Collections\Commons.Collections.csproj", "{86E680E4-7C41-45E2-A83A-AA9211FA5188}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Windows.Forms", "..\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj", "{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Debug|x86.ActiveCfg = Debug|x86
+		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Debug|x86.Build.0 = Debug|x86
 		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Release|x86.ActiveCfg = Release|x86
+		{7FF888DE-A3BB-4887-A239-40FAFAF9885D}.Release|x86.Build.0 = Release|x86
 		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
-		{86E680E4-7C41-45E2-A83A-AA9211FA5188} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
-		{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC} = {09C0D1BA-FEA4-482B-B840-4E913A922C3F}
 	EndGlobalSection
 EndGlobal

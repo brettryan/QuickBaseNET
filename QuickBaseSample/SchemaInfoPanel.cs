@@ -1,7 +1,7 @@
 ﻿/*
  * SchemaInfoPanel.cs    16 August 2009, 20:18
  * 
- * Copyright 2009 John Sands (Australia) Ltd. All rights reserved.
+ * Copyright 2009 Drunken Dev. All rights reserved.
  * Use is subject to license terms.
  * 
  * Author: Brett Ryan
@@ -17,7 +17,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
-namespace JohnSands.QuickBase.Sample {
+namespace DrunkenDev.QuickBase.Sample {
 
     public partial class SchemaInfoPanel : UserControl {
 

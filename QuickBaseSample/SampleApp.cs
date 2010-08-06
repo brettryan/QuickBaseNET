@@ -1,7 +1,7 @@
 ﻿/*
  * QuickBaseSampleApp.cs    11 August 2009, 17:38
  * 
- * Copyright 2009 John Sands (Australia) Ltd. All rights reserved.
+ * Copyright 2009 Drunken Dev. All rights reserved.
  * Use is subject to license terms.
  * 
  * Author: Brett Ryan
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 
-namespace JohnSands.QuickBase.Sample {
+namespace DrunkenDev.QuickBase.Sample {
 
     public static class SampleApp {
 

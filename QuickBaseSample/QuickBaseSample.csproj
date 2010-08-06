@@ -8,7 +8,7 @@
     <ProjectGuid>{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JohnSands.QuickBase.Sample</RootNamespace>
+    <RootNamespace>DrunkenDev.QuickBase.Sample</RootNamespace>
     <AssemblyName>QuickBaseSample</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\build\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,12 +25,20 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\build\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Commons.System, Version=0.1.0.0, Culture=neutral, PublicKeyToken=7a5a518aeaed201e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Commons.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Commons.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7a5a518aeaed201e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Commons.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -99,17 +107,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons.NET\Commons.System\Commons.System.csproj">
-      <Project>{DC2383E3-1C55-4B21-B2B2-D4FCAC48334C}</Project>
-      <Name>Commons.System</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Commons.NET\Commons.Windows.Forms\Commons.Windows.Forms.csproj">
-      <Project>{E04AEE9E-D39F-4977-8CFC-36406EFAE8AC}</Project>
-      <Name>Commons.Windows.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JohnSands.QuickBase\JohnSands.QuickBase.csproj">
+    <ProjectReference Include="..\QuickBaseAPI\QuickBaseAPI.csproj">
       <Project>{7FF888DE-A3BB-4887-A239-40FAFAF9885D}</Project>
-      <Name>JohnSands.QuickBase</Name>
+      <Name>DrunkenDev.QuickBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

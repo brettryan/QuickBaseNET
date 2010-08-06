@@ -1,4 +1,4 @@
-﻿namespace JohnSands.QuickBase.Sample {
+﻿namespace DrunkenDev.QuickBase.Sample {
     partial class SchemaInfoPanel {
         /// <summary> 
         /// Required designer variable.
