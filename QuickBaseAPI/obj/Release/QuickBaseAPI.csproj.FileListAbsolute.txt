@@ -1,0 +1,5 @@
+C:\Users\lnaumo\Visual C#\Libraries\QuickBaseNET\build\Release\DrunkenDev.QuickBase.dll
+C:\Users\lnaumo\Visual C#\Libraries\QuickBaseNET\build\Release\DrunkenDev.QuickBase.pdb
+C:\Users\lnaumo\Visual C#\Libraries\QuickBaseNET\QuickBaseAPI\obj\Release\ResolveAssemblyReference.cache
+C:\Users\lnaumo\Visual C#\Libraries\QuickBaseNET\QuickBaseAPI\obj\Release\DrunkenDev.QuickBase.dll
+C:\Users\lnaumo\Visual C#\Libraries\QuickBaseNET\QuickBaseAPI\obj\Release\DrunkenDev.QuickBase.pdb
