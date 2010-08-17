@@ -5,18 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{7FF888DE-A3BB-4887-A239-40FAFAF9885D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DrunkenDev.QuickBase.Sample</RootNamespace>
-    <AssemblyName>QuickBaseSample</AssemblyName>
+    <RootNamespace>DrunkenDev.QuickBase</RootNamespace>
+    <AssemblyName>DrunkenDev.QuickBase</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -52,19 +51,42 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\build\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Commons.Collections, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Commons.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Commons.System, Version=0.1.0.0, Culture=neutral, PublicKeyToken=7a5a518aeaed201e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Commons.System.dll</HintPath>
-    </Reference>
-    <Reference Include="Commons.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7a5a518aeaed201e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Commons.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -72,67 +94,25 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="QueryResultPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QueryResultPanel.Designer.cs">
-      <DependentUpon>QueryResultPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SampleApp.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="FieldMode.cs" />
+    <Compile Include="FieldType.cs" />
+    <Compile Include="IQuickBaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QueryResultPanel.resx">
-      <DependentUpon>QueryResultPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SampleForm.resx">
-      <DependentUpon>SampleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SchemaInfoPanel.resx">
-      <DependentUpon>SchemaInfoPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="SampleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SampleForm.Designer.cs">
-      <DependentUpon>SampleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SchemaInfoPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SchemaInfoPanel.Designer.cs">
-      <DependentUpon>SchemaInfoPanel.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QuickBaseAPI\QuickBaseAPI.csproj">
-      <Project>{7FF888DE-A3BB-4887-A239-40FAFAF9885D}</Project>
-      <Name>DrunkenDev.QuickBase</Name>
-    </ProjectReference>
+    <Compile Include="Query.cs" />
+    <Compile Include="QueryResult.cs" />
+    <Compile Include="QueryRow.cs" />
+    <Compile Include="QuickBaseCommands.cs" />
+    <Compile Include="QuickBaseException.cs" />
+    <Compile Include="QuickBaseFile.cs" />
+    <Compile Include="QuickBaseService.cs" />
+    <Compile Include="Schema.cs" />
+    <Compile Include="Xml\QueryParser.cs" />
+    <Compile Include="Xml\SchemaParser.cs" />
+    <Compile Include="Xml\Tags.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBaseAPI", "QuickBaseAPI\QuickBaseAPI.csproj", "{7FF888DE-A3BB-4887-A239-40FAFAF9885D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBaseSample", "QuickBaseSample\QuickBaseSample.csproj", "{A945C09B-0F5C-4B07-B230-B286FCCA2AB4}"

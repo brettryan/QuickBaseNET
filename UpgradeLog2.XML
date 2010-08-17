@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="QuickBaseNET">
+</Property><Property Name="Solution File" Value="C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\QuickBaseNET.sln">
+</Property><Property Name="User Options File" Value="C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\QuickBaseNET.suo">
+</Property><Property Name="Date" Value="Tuesday, 17 August 2010">
+</Property><Property Name="Time" Value="11:23 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="QuickBaseNET.sln" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseNET.sln">
+</Event><Event ErrorLevel="0" Project="" Source="QuickBaseNET.suo" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseNET.suo">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseAPI.csproj" Description="Project file successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseAPI.csproj">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseAPI.csproj.user" Description="Project user file successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseAPI.csproj.user">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Field.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Field.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\FieldMode.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\FieldMode.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\FieldType.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\FieldType.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\IQuickBaseService.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\IQuickBaseService.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Query.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Query.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QueryResult.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QueryResult.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QueryRow.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QueryRow.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseCommands.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseCommands.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseException.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseException.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseFile.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseFile.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseService.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\QuickBaseService.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Schema.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Schema.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Xml\QueryParser.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Xml\QueryParser.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Xml\SchemaParser.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Xml\SchemaParser.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\Xml\Tags.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseAPI\Xml\Tags.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseAPI.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="QuickBaseAPI" Source="QuickBaseAPI\QuickBaseAPI.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QuickBaseSample.csproj" Description="Project file successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\QuickBaseSample.csproj">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QuickBaseSample.csproj.user" Description="Project user file successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\QuickBaseSample.csproj.user">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QueryResultPanel.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\QueryResultPanel.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QueryResultPanel.Designer.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\QueryResultPanel.Designer.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SampleApp.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SampleApp.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SampleForm.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SampleForm.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SampleForm.Designer.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SampleForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SchemaInfoPanel.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SchemaInfoPanel.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SchemaInfoPanel.Designer.cs" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SchemaInfoPanel.Designer.cs">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\app.config" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\app.config">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\Properties\Settings.settings" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\Properties\Resources.resx" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QueryResultPanel.resx" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\QueryResultPanel.resx">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SampleForm.resx" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SampleForm.resx">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\SchemaInfoPanel.resx" Description="File successfully backed up as C:\Users\lnaumo\VisualCSharp\Libraries\QuickBaseNET\Backup2\QuickBaseSample\SchemaInfoPanel.resx">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QuickBaseSample.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="QuickBaseSample" Source="QuickBaseSample\QuickBaseSample.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="QuickBaseNET.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="QuickBaseNET.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="QuickBaseSample" Source="QuickBaseSample\QuickBaseSample.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
