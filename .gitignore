@@ -1,0 +1,7 @@
+/build
+/TestResults
+bin
+obj
+*.suo
+*.user
+LocalTestRun.testrunconfig
