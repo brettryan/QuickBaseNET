@@ -790,6 +790,7 @@ namespace DrunkenDev.QuickBase {
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("rid", record.ToString());
+            args.Add("msInUTC", "1");
 
             List<Element> elements = new List<Element>();
             foreach (var f in fieldValues) {
