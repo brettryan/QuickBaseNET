@@ -853,6 +853,70 @@ namespace DrunkenDev.QuickBase {
             return Int32.Parse(result);
         }
 
+        /*
+         * Add Records to QuickBase
+         */
+
+        public int AddRecords(string dbid, IEnumerable<KeyValuePair<int, string>> fieldValues) {
+            string errCode = null;
+            string errText = null;
+            string errDetail = null;
+            string action = QuickBaseCommands.AddRecord;
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+
+            List<Element> elements = new List<Element>();
+            foreach (var f in fieldValues) {
+                Element e = new Element("field", f.Value);
+                e.Attributes.Add("fid", f.Key.ToString());
+                elements.Add(e);
+            }
+
+            WebResponse res = GetResponse(dbid, action, args, elements);
+            string result = null;
+            StringBuilder field = new StringBuilder();
+
+            using (XmlReader rdr = XmlReader.Create(GetResponseStream(res.GetResponseStream(), action),
+                                                    GetReaderSettings())) {
+                rdr.MoveToContent();
+                // Use of ReadInnerXml will move the cursor.
+                bool c = rdr.Read();
+
+                while (c) {
+                    c = false;
+                    if (rdr.IsStartElement()) {
+                        switch (rdr.Name) {
+                            case Tags.DocRoot:
+                                break;
+                            case SchemaParser.TagTable:
+                                break;
+                            case Tags.Action:
+                                action = rdr.ReadString();
+                                break;
+                            case Tags.ErrorCode:
+                                errCode = rdr.ReadString();
+                                break;
+                            case Tags.ErrorText:
+                                errText = rdr.ReadString();
+                                break;
+                            case Tags.ErrorDetail:
+                                errDetail = rdr.ReadString();
+                                break;
+#if DEBUG
+                            default:
+                                if (ShowDebugMessages)
+                                    Console.WriteLine("Unknown {0} Property: '{1}'", action, rdr.Name);
+                                break;
+#endif
+                        }
+                    }
+                    if (!c) c = rdr.Read();
+                }
+            }
+            CheckError(errCode, errText, errDetail, action);
+            return Int32.Parse(result);
+        }
+
         private Uri GetFileUri(QuickBaseFile file) {
             UriBuilder bld = new UriBuilder(file.Uri);
             bld.Query = "ticket=" + Ticket;
