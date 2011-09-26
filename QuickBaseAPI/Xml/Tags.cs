@@ -42,6 +42,8 @@ namespace DrunkenDev.QuickBase.Xml {
 
         internal const string AppToken = "apptoken";
 
+        internal const string RecordID = "rid";
+
     }
 
 }

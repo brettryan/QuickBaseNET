@@ -789,7 +789,7 @@ namespace DrunkenDev.QuickBase {
             string action = QuickBaseCommands.EditRecord;
 
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("rid", record.ToString());
+            args.Add(Tags.RecordID, record.ToString());
             args.Add("msInUTC", "1");
 
             List<Element> elements = new List<Element>();
@@ -901,6 +901,9 @@ namespace DrunkenDev.QuickBase {
                                 break;
                             case Tags.ErrorDetail:
                                 errDetail = rdr.ReadString();
+                                break;
+                            case Tags.RecordID:
+                                result = rdr.ReadString();
                                 break;
 #if DEBUG
                             default:
