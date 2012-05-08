@@ -791,11 +791,12 @@ namespace DrunkenDev.QuickBase {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add(Tags.RecordID, record.ToString());
             args.Add("msInUTC", "1");
-
+            //<testc fid="32">f.Value</testc>
             List<Element> elements = new List<Element>();
             foreach (var f in fieldValues) {
                 Element e = new Element("field", f.Value);
                 e.Attributes.Add("fid", f.Key.ToString());
+                e.Attributes.Add("filename", "");
                 elements.Add(e);
             }
 
@@ -822,6 +823,80 @@ namespace DrunkenDev.QuickBase {
                             case SchemaParser.TagTable:
                             //    result = QueryParser.GetQueryResult(rdr.ReadSubtree());
                             //    c = true;
+                                break;
+                            case "num_fields_changed":
+                                result = rdr.ReadString();
+                                break;
+                            case Tags.Action:
+                                action = rdr.ReadString();
+                                break;
+                            case Tags.ErrorCode:
+                                errCode = rdr.ReadString();
+                                break;
+                            case Tags.ErrorText:
+                                errText = rdr.ReadString();
+                                break;
+                            case Tags.ErrorDetail:
+                                errDetail = rdr.ReadString();
+                                break;
+#if DEBUG
+                            default:
+                                if (ShowDebugMessages)
+                                    Console.WriteLine("Unknown {0} Property: '{1}'", action, rdr.Name);
+                                break;
+#endif
+                        }
+                    }
+                    if (!c) c = rdr.Read();
+                }
+            }
+            CheckError(errCode, errText, errDetail, action);
+            return Int32.Parse(result);
+        }
+
+        public int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, IFieldValue>> fieldValues) {
+            string errCode = null;
+            string errText = null;
+            string errDetail = null;
+            string action = QuickBaseCommands.EditRecord;
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add(Tags.RecordID, record.ToString());
+            args.Add("msInUTC", "1");
+            //<testc fid="32">f.Value</testc>
+            List<Element> elements = new List<Element>();
+            foreach (var f in fieldValues) {
+                Element e = new Element("field", f.Value.GetDataAsString());
+                e.Attributes.Add("fid", f.Key.ToString());
+                foreach (var attr in f.Value.GetAttributes()) {
+                    e.Attributes.Add(attr.Key, attr.Value);
+                }
+                elements.Add(e);
+            }
+
+            WebResponse res = GetResponse(dbid, action, args, elements);
+            string result = null;
+            StringBuilder field = new StringBuilder();
+
+            using (XmlReader rdr = XmlReader.Create(GetResponseStream(res.GetResponseStream(), action),
+                                                    GetReaderSettings())) {
+                rdr.MoveToContent();
+                // Use of ReadInnerXml will move the cursor.
+                bool c = rdr.Read();
+
+                while (c) {
+                    c = false;
+                    if (rdr.IsStartElement()) {
+                        switch (rdr.Name) {
+                            case Tags.DocRoot:
+                                break;
+                            //case "table":
+                            //    result.Schema = SchemaParser.GetSchema(rdr.ReadSubtree());
+                            //    c = true;
+                            //    break;
+                            case SchemaParser.TagTable:
+                                //    result = QueryParser.GetQueryResult(rdr.ReadSubtree());
+                                //    c = true;
                                 break;
                             case "num_fields_changed":
                                 result = rdr.ReadString();

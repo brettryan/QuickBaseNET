@@ -101,6 +101,8 @@
     <Compile Include="Field.cs" />
     <Compile Include="FieldMode.cs" />
     <Compile Include="FieldType.cs" />
+    <Compile Include="FileFieldValue.cs" />
+    <Compile Include="IFieldValue.cs" />
     <Compile Include="IQuickBaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query.cs" />

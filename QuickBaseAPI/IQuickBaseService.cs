@@ -119,8 +119,9 @@ namespace DrunkenDev.QuickBase {
 
         QueryResult Query(string dbid, int queryId, string queryText, Query query);
 
-        int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, string>> fieldValues);
         //int EditRecords(int record, IEnumerable<KeyValuePair<int, string>> fieldValues);
+        int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, string>> fieldValues);
+        int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, IFieldValue>> fieldValues);
 
         int AddRecords(string dbid, IEnumerable<KeyValuePair<int, string>> fieldValues);
 
