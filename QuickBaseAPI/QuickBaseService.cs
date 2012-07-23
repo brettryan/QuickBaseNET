@@ -854,6 +854,10 @@ namespace DrunkenDev.QuickBase {
             return Int32.Parse(result);
         }
 
+        /*
+         * Edit Records in QuickBase
+         */
+         
         public int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, IFieldValue>> fieldValues) {
             string errCode = null;
             string errText = null;
@@ -900,6 +904,65 @@ namespace DrunkenDev.QuickBase {
                                 break;
                             case "num_fields_changed":
                                 result = rdr.ReadString();
+                                break;
+                            case Tags.Action:
+                                action = rdr.ReadString();
+                                break;
+                            case Tags.ErrorCode:
+                                errCode = rdr.ReadString();
+                                break;
+                            case Tags.ErrorText:
+                                errText = rdr.ReadString();
+                                break;
+                            case Tags.ErrorDetail:
+                                errDetail = rdr.ReadString();
+                                break;
+#if DEBUG
+                            default:
+                                if (ShowDebugMessages)
+                                    Console.WriteLine("Unknown {0} Property: '{1}'", action, rdr.Name);
+                                break;
+#endif
+                        }
+                    }
+                    if (!c) c = rdr.Read();
+                }
+            }
+            CheckError(errCode, errText, errDetail, action);
+            return Int32.Parse(result);
+        }
+        
+        /*
+         * Delete Records
+         */
+
+        public int DeleteRecords(string dbid, int record) {
+            string errCode = null;
+            string errText = null;
+            string errDetail = null;
+            string action = QuickBaseCommands.DeleteRecord;
+
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add(Tags.RecordID, record.ToString());
+            args.Add("msInUTC", "1");
+
+            WebResponse res = GetResponse(dbid, action, args, null);
+            string result = null;
+            StringBuilder field = new StringBuilder();
+
+            using (XmlReader rdr = XmlReader.Create(GetResponseStream(res.GetResponseStream(), action),
+                                                    GetReaderSettings())) {
+                rdr.MoveToContent();
+                // Use of ReadInnerXml will move the cursor.
+                bool c = rdr.Read();
+
+                while (c) {
+                    c = false;
+                    if (rdr.IsStartElement()) {
+                        switch (rdr.Name) {
+                            case Tags.DocRoot:
+                                break;
+                            case SchemaParser.TagTable:
                                 break;
                             case Tags.Action:
                                 action = rdr.ReadString();
@@ -995,6 +1058,8 @@ namespace DrunkenDev.QuickBase {
             CheckError(errCode, errText, errDetail, action);
             return Int32.Parse(result);
         }
+
+        
 
         private Uri GetFileUri(QuickBaseFile file) {
             UriBuilder bld = new UriBuilder(file.Uri);
