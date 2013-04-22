@@ -124,7 +124,7 @@ namespace DrunkenDev.QuickBase {
         int EditRecords(string dbid, int record, IEnumerable<KeyValuePair<int, IFieldValue>> fieldValues);
 
         int AddRecords(string dbid, IEnumerable<KeyValuePair<int, string>> fieldValues);
-        int DeleteRecords(string dbid, int record);
+        void DeleteRecords(string dbid, int record);
 
         /// <summary>
         /// Gets a file as a stream object.

@@ -936,7 +936,7 @@ namespace DrunkenDev.QuickBase {
          * Delete Records
          */
 
-        public int DeleteRecords(string dbid, int record) {
+        public void DeleteRecords(string dbid, int record) {
             string errCode = null;
             string errText = null;
             string errDetail = null;
@@ -987,8 +987,6 @@ namespace DrunkenDev.QuickBase {
                     if (!c) c = rdr.Read();
                 }
             }
-            CheckError(errCode, errText, errDetail, action);
-            return Int32.Parse(result);
         }
 
         /*
